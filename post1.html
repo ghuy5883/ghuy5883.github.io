@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Geneva Huynh - Work</title>
+  <title>Geneva Huynh - SPR2020 - Game Engine Project</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -117,13 +117,41 @@
             
             <h2 class="section-heading" id="lighting-topic">Lighting </h2>
             <p>
-              Lighting
+              Adding lighting was the next step. For this part of the project, I learned how to write shaders for basic diffuse, ambient, and specular lighting.
             </p>
+            <img class="img-fluid" src="img/gameengine_lighting.png" alt="">
+            <span class="caption text-muted">Lighting applied to the scene.</span>
 
             <h2 class="section-heading" id="profiling-topic">Profiling </h2>
+            <p>
+              In a separate file, simple profiling functionality was implemented so that the user can check stats such as render times or time spent with the application open. This functionality can be
+              used by calling on the profiler's timer at the start and end of the code section that the user would like to time. The results are then outputted to a formatted file.
+            </p>
             <h2 class="section-heading" id="models-animation-topic">Models and Animation </h2>
+            <p>
+              Using pre-acquired mesh data, the scene was now updated to support the rendering of 3D models and to animate them. To do so, all of a scene's data is stored within a JSON file,
+              which is then parsed into its various object components. Every object's data is recorded by an asset manager, a class which keeps track of all related
+              meshes, shaders, textures, and more. This asset manager provides the necessary data to render models created in the game.
+            </p>
+            <img class="img-fluid" src="img/gameengine_model.png" alt="">
+            <span class="caption text-muted">3D model of a futuristic spaceship with point lights in the background.</span>
+            <p>
+              As for animation, animation and skeleton data will be loaded in with the provided scene's JSON. If a model comes with animation data, then it will be loaded and stored in an animation component.
+              This component can then be attached to its character object.
+            </p>
+            <img class="img-fluid" src="img/gameengine_model_2.png" alt="">
+            <span class="caption text-muted">3D model of a robotic man, idle animation implemented.</span>
             <h2 class="section-heading" id="multithreading-topic">Multithreading </h2>
+            <p>
+              This was a short modification to some of the existing files, namely those involved in the animation manager, to allow for slightly improved performance via multithreading. 
+            </p>
             <h2 class="section-heading" id="collisions-topic">Collisions </h2>
+            <p>
+              Drawing back on the library of math functions that had been created at the beginning, proper collisions were now implemented into the actual scene. Each object now had a hitbox 
+              associated with their model. In this case, the character's position was raycasted against the plane hitboxes of the platforms to detect whether the character was standing on top of them.
+            </p>
+            <img class="img-fluid" src="img/gameengine_collision.png" alt="">
+            <span class="caption text-muted">Character falling off of a platform.</span>
             <h2 class="section-heading" id="normal-map-topic">Normal Map </h2>
             <h2 class="section-heading" id="bloom-topic">Bloom </h2>
             <p> The final addition is the inclusion of a bloom filter, which can be applied to add a glossy, blurry glow effect.</p>
