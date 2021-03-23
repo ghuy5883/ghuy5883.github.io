@@ -59,14 +59,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Work</h1>
-            <h2 class="subheading">
-              <br>
-              <a href = #> Programming </a>
-              <br>
-              <br>
-              <a href = #> Art </a>
-            </h2>
+            <h1>SPR2020 - Experimental Game Engine</h1>
+            <h2 class="subheading">Setting up a simplistic game engine with physics, collision detection, animation functionality, and more.</h2>
+            <span class="meta">Posted under
+              <a href="#">Programming</a>
+              on May 8, 2020</span>
           </div>
         </div>
       </div>
@@ -79,30 +76,59 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <h2 class="section-heading">Programming</h2>
+          <h2 class="section-heading"> Project Description </h2>
+            <p> Throughout the course of a semester, I assembled a simple game engine in C++ and tested it in Visual Studio. </p>
+            
+            <p>
+                Working from the bottom, I had to write the physics and math functions that would be
+                used to simulate real-life physics on objects inside the engine and looked through the Windows DirectX documentation in order to properly render shapes onto the screen.
+                From there, later goals were to implement additional features or improve performance, such as the creation of various shaders, multi-threading, and profiling functionality.
+            </p>
+
+          <h2 class="section-heading">Log </h2>
             <ul>
-              <li>
-                <a href = #> SPR2020 - Experimental Game Engine</a>
-              </li>
-              <li>
-                <a href = #> SPR2020 - Game Prototype - In Another Life</a>
-              </li>
-              <li>
-                <a href = #> SPR2020 - Game Prototype - Obstacle Course!</a>
-              </li>
-              <li>
-                <a href = #> SPR2020 - Game Prototype - Limitless</a>
-              </li>
+                <li> <a href = "#math-physics-topic"> Engine Math and Physics</a> </li>
+                <li> <a href = "#rendering-topic"> Rendering </a> </li>
+                <li><a href = "#lighting-topic"> Lighting </a> </li>
+                <li> <a href = "#profiling-topic"> Profiling </a></li>
+                <li> <a href = "#models-animation-topic"> Models and Animation </a> </li>
+                <li> <a href = "#multithreading-topic"> Multi-threading </a></li>
+                <li> <a href = "#collisions-topic"> Collisions </a></li>
+                <li> <a href = "#normal-map-topic"> Normal Map </a></li>
+                <li> <a href = "#bloom-topic"> Bloom </a></li>
             </ul>
 
-          <h2 class="section-heading">Art</h2>
+            <h2 class="section-heading" id="math-physics-topic">Engine Math and Physics </h2>
+            <p> The first files I worked on were the engineMath.h and engineMath.cpp files. In it, functions for vector math and matrix operations
+              were implented for later use in the physics files.
+            </p>
+            <p>
+              The engine physics were implemented in another set of files, Physics.h and Physics.cpp. In it were functions for collision/intersection detection
+              between AABB boundaries as well as between a ray and an AABB boundary.
+            </p>
+
+            <h2 class="section-heading" id="rendering-topic">Rendering </h2>
+            <p>
+              Rendering was implemented via the Direct3D API. The first iteration of the engine involved rendering a rotating 2D triangle to test whether it had been implemented
+              properly. Afterwards, I tested rendering in 3D by rotating a cube.
+            </p>
+            <img class="img-fluid" src="img/gameengine_rendering_1.png" alt="">
+            <span class="caption text-muted">Triangle and cube fully rendered.</span>
             
+            <h2 class="section-heading" id="lighting-topic">Lighting </h2>
+            <p>
+              Lighting
+            </p>
 
-          <a href="#">
-            <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
-          </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
+            <h2 class="section-heading" id="profiling-topic">Profiling </h2>
+            <h2 class="section-heading" id="models-animation-topic">Models and Animation </h2>
+            <h2 class="section-heading" id="multithreading-topic">Multithreading </h2>
+            <h2 class="section-heading" id="collisions-topic">Collisions </h2>
+            <h2 class="section-heading" id="normal-map-topic">Normal Map </h2>
+            <h2 class="section-heading" id="bloom-topic">Bloom </h2>
+            <p> The final addition is the inclusion of a bloom filter, which can be applied to add a glossy, blurry glow effect.</p>
+            <img class="img-fluid" src="img/gameengine_1.png" alt="">
+            <span class="caption text-muted">Observable bloom filter on the surface of the platform.</span>
         </div>
       </div>
     </div>
