@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Geneva Huynh - SPR2020 - Game Engine Project</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Geneva Huynh</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/gameengine_workspace.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>SPR2020 - Experimental Game Engine</h1>
+            <h2 class="subheading">Setting up a simple game engine with physics, collision detection, animation functionality, and other features.</h2>
+            <span class="meta">Posted under
+              <a href="#">Programming</a>
+              on May 8, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading"> Project Description </h2>
+            <p> Throughout the course of a semester, I assembled a simple game engine in C++ and tested it in Visual Studio. </p>
+            
+            <p>
+                Working from the bottom, I had to write the physics and math functions that would be
+                used to simulate real-life physics on objects inside the engine and looked through the Windows DirectX documentation in order to properly render shapes onto the screen.
+                From there, later goals were to implement additional features or improve performance, such as the creation of various shaders, multi-threading, and profiling functionality.
+            </p>
+
+            <h2 class="section-heading"> A Closer Look </h2>
+            <p>
+              <a href="https://github.com/ghuy5883/pf/tree/main/SPR2020_Game_Engine/genevahu">
+                You can find the project solution and code here.
+              </a>
+            </p>
+
+          <h2 class="section-heading">Log </h2>
+            <ul>
+                <li> <a href = "#math-physics-topic"> Engine Math and Physics</a> </li>
+                <li> <a href = "#rendering-topic"> Rendering </a> </li>
+                <li><a href = "#lighting-topic"> Lighting </a> </li>
+                <li> <a href = "#profiling-topic"> Profiling </a></li>
+                <li> <a href = "#models-animation-topic"> Models and Animation </a> </li>
+                <li> <a href = "#multithreading-topic"> Multi-threading </a></li>
+                <li> <a href = "#collisions-topic"> Collisions </a></li>
+                <li> <a href = "#normal-map-topic"> Normal Map </a></li>
+                <li> <a href = "#bloom-topic"> Bloom </a></li>
+            </ul>
+
+            <h2 class="section-heading topic-holder" id="math-physics-topic">Engine Math and Physics </h2>
+            <div>
+              <p> The first files I worked on were the engineMath.h and engineMath.cpp files. In it, functions for vector math and matrix operations
+                were implented for later use in the physics files.
+              </p>
+              <p>
+                The engine physics were implemented in another set of files, Physics.h and Physics.cpp. In it were functions for collision/intersection detection
+                between AABB boundaries as well as between a ray and an AABB boundary.
+              </p>
+            </div>
+
+            <h2 class="section-heading topic-holder" id="rendering-topic">Rendering </h2>
+            <div>
+              <p>
+                Rendering was implemented via the Direct3D API. The first iteration of the engine involved rendering a rotating 2D triangle to test whether it had been implemented
+                properly. Afterwards, I tested rendering in 3D by rotating a cube.
+              </p>
+              <img class="img-fluid" src="img/gameengine_rendering_1.png" alt="">
+              <span class="caption text-muted">Triangle and cube fully rendered.</span>  
+            </div> 
+
+            <h2 class="section-heading topic-holder" id="lighting-topic">Lighting </h2>
+            <div>
+              <p>
+                Adding lighting was the next step. For this part of the project, I learned how to write shaders for basic diffuse, ambient, and specular lighting.
+              </p>
+              <img class="img-fluid" src="img/gameengine_lighting.png" alt="">
+              <span class="caption text-muted">Lighting applied to the scene.</span>  
+            </div>
+
+            <h2 class="section-heading topic-holder" id="profiling-topic">Profiling </h2>
+            <div>
+              <p>
+                In a separate file, simple profiling functionality was implemented so that the user can check stats such as render times or time spent with the application open. This functionality can be
+                used by calling on the profiler's timer at the start and end of the code section that the user would like to time. The results are then outputted to a formatted file.
+              </p>
+            </div>
+
+            <h2 class="section-heading topic-holder" id="models-animation-topic">Models and Animation </h2>
+            <div>
+              <p>
+                Using pre-acquired mesh data, the scene was now updated to support the rendering of 3D models and to animate them. To do so, all of a scene's data is stored within a JSON file,
+                which is then parsed into its various object components. Every object's data is recorded by an asset manager, a class which keeps track of all related
+                meshes, shaders, textures, and more. This asset manager provides the necessary data to render models created in the game.
+              </p>
+              <img class="img-fluid" src="img/gameengine_model.png" alt="">
+              <span class="caption text-muted">3D model of a futuristic spaceship with point lights in the background.</span>
+              <p>
+                As for animation, animation and skeleton data will be loaded in with the provided scene's JSON. If a model comes with animation data, then it will be loaded and stored in an animation component.
+                This component can then be attached to its character object.
+              </p>
+              <img class="img-fluid" src="img/gameengine_model_2.png" alt="">
+              <span class="caption text-muted">3D model of a robotic man, idle animation implemented.</span>  
+            </div>
+            
+            <h2 class="section-heading topic-holder" id="multithreading-topic">Multithreading </h2>
+            <div>
+              <p>
+                This was a short modification to some of the existing files, namely those involved in the animation manager, to allow for slightly improved performance via multithreading. Tasks that can be
+                accomplished by multi-threading are assigned by an overarching job manager object.
+              </p>
+            </div>
+
+            <h2 class="section-heading topic-holder" id="collisions-topic">Collisions </h2>
+            <div>
+              <p>
+                Drawing back on the library of math functions that had been created at the beginning, proper collisions were now implemented into the actual scene. Each object now had a hitbox 
+                associated with their model. In this case, the character's position was raycasted against the plane hitboxes of the platforms to detect whether the character was standing on top of them.
+              </p>
+              <img class="img-fluid" src="img/gameengine_collision.png" alt="">
+              <span class="caption text-muted">Character falling off of a platform.</span>
+            </div>
+
+            <h2 class="section-heading topic-holder" id="normal-map-topic">Normal Map </h2>
+            <div>
+              <p>
+                The normal map feature allowed me to add the appearance of texture onto surface without actually increasing polygon count on the models. This was accomplished by further iterating on the existing shaders
+                to accept normal map inputs and to include that data when calculating the final color of a pixel after lighting and color.
+              </p>
+              <img class="img-fluid" src="img/gameengine_normal_map.png" alt="">
+              <span class="caption text-muted">Normal map functionality implemented to add texture to the platforms. Comparison platform with no normal map to the right.</span>  
+            </div>
+            
+            <h2 class="section-heading topic-holder" id="bloom-topic">Bloom </h2>
+            <div>
+              <p> The final addition is the inclusion of a bloom filter, which can be applied to add a glossy, blurry glow effect.</p>
+              <img class="img-fluid" src="img/gameengine_1.png" alt="">
+              <span class="caption text-muted">Observable bloom filter on the surface of the platform.</span>  
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Geneva Huynh 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+  <script>
+    $(".topic-holder").next().slideUp(500);
+
+    $(".topic-holder").on("click", function() {
+      $(this).next().slideToggle(500, function() {
+        console.log("toggle div visibility");
+      })
+    });
+
+    $(".topic-holder").on("mouseleave", function() {
+      $(this).css("backgroundColor", "#ffffff");
+    });
+    
+    $(".topic-holder").on("mouseenter", function() {
+      $(this).css("backgroundColor", "#ccc4c4");
+    });
+  </script>
+
+</body>
+
+</html>
